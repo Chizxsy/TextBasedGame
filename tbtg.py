@@ -61,6 +61,7 @@ def game():
 
         print("\n")
     function_one(str(list[0:1]))
+
     ascii_convert()
 
     def playing():
@@ -81,9 +82,8 @@ def game():
         while True:
             print("You have", currency, "remaining")
             purchase = input()
-            if purchase == "done":
-                break
-            if purchase = str(0):
+            print(currency)
+            if currency == 0:
                 break
             elif purchase == str(1):
                 if currency >= 500:
@@ -128,12 +128,28 @@ def game():
 
             else:
                 function_one(str(list[9:10]))
+
+        def b_first_encounter():
+            function_one(str(list[10:11]))
+            for elem in range(len(purchased)):
+                if str(1) in purchased:
+                    function_one(str(list[11:12]))
+                elif  str(2) in purchased:
+                    function_one(str(list[12:13]))
+                elif str(3) in purchased:
+                    function_one(str(list[13:14]))
+                elif str(4) in purchased:
+                    function_one(str(list[14:15]))
+                elif str(5) in purchased:
+                    function_one(str(list[15:16]))
+                else:
+                   print("You failed to buy anything and died. RIP.")
+                   sys.exit()
+
+            function_one(str(list[16:17]))
+
+        b_first_encounter()
+
     buy()
-
-    def first_encounter():
-        function_one(str(list[10:11]))
-
-    first_encounter()
-
 
 game()
