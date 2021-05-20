@@ -1,4 +1,0 @@
-Installing Rich Text 
-pip install rich 
-Testing Rich 
-python -m rich
