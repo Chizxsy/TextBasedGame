@@ -1,4 +1,4 @@
 # TextBasedGame
 Welcome! 
 
-This is going to become a text based game written in Python for use in the terminal. The game is set in space. The goal is to get rid of mosters and get the ship going again and make it to home. You will have help from mission control and items you can buy in the shop at the start. Good Luck. 
+Astro is a text based terminal game attempting to replicate games from the likes of The Oregon Trail but with a modern twist. You are in a ship in space and collid with an asteriod knocking you and your crew out. The mission is as follows: you have to repaire the damaged parts of the ship and make it back to earth. You start with a disadvantage which increases the "challange" 
