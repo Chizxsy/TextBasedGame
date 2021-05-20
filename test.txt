@@ -1,2 +1,11 @@
-Test String
-Test String Two 
+Welcome to Astro. You are about to enter the world of adventure all from your computer's terminal.
+Thanks for playing Astro. You are about the begin. Good luck.
+Sorry to see you go. The Astro team(charlie) will miss you. :(
+The mission is as follows: you and your crew are traveling at warp speed through space when suddenly you collide with an asteroid. Your ship comes to a grinding halt, power cuts and you’re not sure what happened. Open a buy menu - you have 1000 currency. Press the number multiple times if you wish to buy more.
+1 - supplemental oxygen [ 500 ]
+2 - 10 energy rounds [ 100 ]
+3 - rocket fuel [ 300 ]
+4 - protective gear [ 300 ]
+5 - flashlight [ 100 ]
+Invalid Choice
+You awake after being knocked out. You find your [choices] near your side. Your vision is still a bit blurry and your mememoy of the events is still a bit foggy. What do you do now?
