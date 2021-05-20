@@ -1,5 +1,53 @@
-#text based adventure game
 import sys, random, time
+from PIL import Image
+
+# ascii characters used to build the output text
+ASCII_CHARS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
+
+# resize image1 according to a new width
+def resize_image1(image1, new_width=100):
+    width, height = image1.size
+    ratio = height/width
+    new_height = int(new_width * ratio)
+    resized_image1 = image1.resize((new_width, new_height))
+    return(resized_image1)
+
+# convert each pixel to grayscale
+def grayify(image1):
+    grayscale_image1 = image1.convert("L")
+    return(grayscale_image1)
+
+# convert pixels to a string of ascii characters
+def pixels_to_ascii(image1):
+    pixels = image1.getdata()
+    characters = "".join([ASCII_CHARS[pixel//25] for pixel in pixels])
+    return(characters)
+
+def main(new_width=100):
+    try:
+        image1 = Image.open('space.jpg')
+        print(image1)
+    except:
+        print("failed")
+        return
+
+    # convert image1 to ascii
+    new_image1_data = pixels_to_ascii(grayify(resize_image1(image1)))
+
+    # format
+    pixel_count = len(new_image1_data)
+    ascii_image1 = "\n".join([new_image1_data[index:(index+new_width)] for index in range(0, pixel_count, new_width)])
+
+    # print result
+    print(ascii_image1)
+
+    # save result to "ascii_image1.txt"
+    with open("ascii_image1.txt", "w") as f:
+        f.write(ascii_image1)
+
+# run program
+main()
+
 
 text_file = open("text.txt", "r")
 list = [(line.strip()) for line in text_file]
@@ -36,7 +84,7 @@ def game():
         while True:
             print("You have", currency, "remaining")
             purchase = input()
-            if currency == 0:
+            if purchase == "done":
                 break
             elif purchase == str(1):
                 if currency >= 500:
