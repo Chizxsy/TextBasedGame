@@ -23,7 +23,7 @@ def pixels_to_ascii(image1):
     characters = "".join([ASCII_CHARS[pixel//25] for pixel in pixels])
     return(characters)
 
-def main(new_width=100):
+def ascii_convert(new_width=100):
     try:
         image1 = Image.open('space.jpg')
         print(image1)
@@ -45,10 +45,6 @@ def main(new_width=100):
     with open("ascii_image1.txt", "w") as f:
         f.write(ascii_image1)
 
-# run program
-main()
-
-
 text_file = open("text.txt", "r")
 list = [(line.strip()) for line in text_file]
 text_file.close()
@@ -65,6 +61,7 @@ def game():
 
         print("\n")
     function_one(str(list[0:1]))
+    ascii_convert()
 
     def playing():
         if input("Do you wish to proceed? Y/n") != "n":
@@ -85,6 +82,8 @@ def game():
             print("You have", currency, "remaining")
             purchase = input()
             if purchase == "done":
+                break
+            if purchase = str(0):
                 break
             elif purchase == str(1):
                 if currency >= 500:
