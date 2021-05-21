@@ -1,0 +1,1 @@
+Download the file named space.jpg which is the logo for the game. The function called ascii_convert converts the image file to ascii characters for a more vintage feel.
