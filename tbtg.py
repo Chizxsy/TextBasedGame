@@ -8,7 +8,8 @@ ASCII_CHARS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
 def resize_image1(image1, new_width=100):
     width, height = image1.size
     ratio = height/width
-    new_height = int(new_width * ratio)
+    night = int(new_width * ratio)
+    new_height = int(night/2)
     resized_image1 = image1.resize((new_width, new_height))
     return(resized_image1)
 
@@ -74,6 +75,7 @@ def game():
 
     def buy():
         function_one(str(list[3:4]))
+        time.sleep(0.5)
         for i in range(5):
             function_one(str(list[i+4]))
 
@@ -82,7 +84,6 @@ def game():
         while True:
             print("You have", currency, "remaining")
             purchase = input()
-            print(currency)
             if currency == 0:
                 break
             elif purchase == str(1):
@@ -131,25 +132,62 @@ def game():
 
         def b_first_encounter():
             function_one(str(list[10:11]))
-            for elem in range(len(purchased)):
+            time.sleep(0.5)
+            for i in range(1):
                 if str(1) in purchased:
                     function_one(str(list[11:12]))
-                elif  str(2) in purchased:
+                if  str(2) in purchased:
                     function_one(str(list[12:13]))
-                elif str(3) in purchased:
+                if str(3) in purchased:
                     function_one(str(list[13:14]))
-                elif str(4) in purchased:
+                if str(4) in purchased:
                     function_one(str(list[14:15]))
-                elif str(5) in purchased:
+                if str(5) in purchased:
                     function_one(str(list[15:16]))
-                else:
-                   print("You failed to buy anything and died. RIP.")
-                   sys.exit()
 
             function_one(str(list[16:17]))
 
         b_first_encounter()
 
     buy()
+
+
+    def first_encounter():
+        numberList = ["bad", "good"]
+        for i in range(5):
+            function_one(str(list[i+17]))
+
+        choice = input()
+
+        dc = random.choices(numberList, weights=(10, 50), k=1)
+        print(dc)
+        if choice == str(1):
+            function_one(str(list[22:23]))
+            if str(2) in purchased:
+                function_one(str(list[25:26]))
+                choice_two = input("y/n")
+                if choice_two != "n":
+                    function_one(str(list[26:27]))
+                else:
+                    if dc == "good":
+                        function_one(str(list[27:28]))
+                    elif dc == "bad":
+                        function_one(str(list[28:29]))
+                        sys.exit()
+
+                if dc == "good":
+                    function_one(str(list[27:28]))
+                elif dc == "bad":
+                    function_one(str(list[28:29]))
+                    sys.exit()
+
+
+        elif choice == str(2):
+            function_one(str(list[23:24]))
+        elif choice == str(3):
+            function_one(str(list[24:25]))
+
+
+    first_encounter()
 
 game()
