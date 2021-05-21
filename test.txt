@@ -3,16 +3,28 @@ Thanks for playing Astro. You are about the begin. Good luck.
 Sorry to see you go. The Astro team(charlie) will miss you. :(
 The mission is as follows: you and your crew are traveling at warp speed through space when suddenly you collide with an asteroid. Your ship comes to a grinding halt, power cuts and you’re not sure what happened. Once the buy menu opens you will see a number for the choice that corresponds to the item you can buy. To buy the item press the number of the item that you wish to buy. You will have 5 options: 1 through 5. You will proceed with the game if you have spent all your money or if you type "done" into the command line.
 1 - supplemental oxygen [ 500 ]
-2 - 10 energy rounds [ 100 ]
+2 - medical supplies [ 100 ]
 3 - rocket fuel [ 300 ]
 4 - protective gear [ 200 ]
 5 - flashlight [ 100 ]
 Invalid Choice
 You awake after being knocked out. You find your
 supplemental oxygen
-10 energy rounds
+medical supplies
 rocket fuel
 protective gear
 flashlight
 near your side. Your vision is still a bit blurry and your memory of the events is still a bit foggy. What do you do now?
+1 - check on your crew
+2 - check comms to see if you can call for help
+3 - make sure there isn’t damage that could pose an immediate threat
+4 - check out the impact zone
+5 - Use your flashlight or oxygen
+you make sure that the two other crew mates are okay. As it turns out, one of the crew is injured badly. He has a risk of dying if you don’t do anything and could prove useful to the mission.
+you check the comms to the outside world but to no avail. However, you are able to get the comms working between your space suit and the command center of the ship. You can now communicate with the remaining crew
+you get up and head towards the door towards the frontal storage unit. You see that the door is a bit damaged and could pose a safety hazard. Do you wish to continue through the door?
+You bought medical supplies that could save your crewmates life. Do you wish to use them?
+You saved your crewmates life and thank you heavily by saying, "they own you one next time".
+Despite the facts your crewmate lived. Congragulations
+The guilt of not doing anything drives you to the breaking point. You can no longer continue the mission. Better luck next time. 
 
