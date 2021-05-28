@@ -18,13 +18,24 @@ near your side. Your vision is still a bit blurry and your memory of the events 
 1 - check on your crew
 2 - check comms to see if you can call for help
 3 - make sure there isn’t damage that could pose an immediate threat
-4 - check out the impact zone
-5 - Use your flashlight or oxygen
 you make sure that the two other crew mates are okay. As it turns out, one of the crew is injured badly. He has a risk of dying if you don’t do anything and could prove useful to the mission.
-you check the comms to the outside world but to no avail. However, you are able to get the comms working between your space suit and the command center of the ship. You can now communicate with the remaining crew
+you check the comms to the outside world but to no avail. However, you are able to get the comms working between your space suit and the command center of the ship. You could have communicated with the crew if they were well. Do you want to give up or continue the mission solo?
 you get up and head towards the door towards the frontal storage unit. You see that the door is a bit damaged and could pose a safety hazard. Do you wish to continue through the door?
 You bought medical supplies that could save your crewmates life. Do you wish to use them?
 You saved your crewmates life and thank you heavily by saying, "they own you one next time".
-Despite the facts your crewmate lived. Congragulations
-The guilt of not doing anything drives you to the breaking point. You can no longer continue the mission. Better luck next time. 
-
+Despite the facts your crewmate lived. congratulation!
+The guilt of not doing anything drives you to the breaking point. You can no longer continue the mission. Better luck next time.
+You stuck around. You are now solo which increases the challenge. Astro likes to see that! What do you want to do now?
+You head through the door
+You return the the main area
+1 - check on your crew
+2 - check comms
+Trying to open the door caused too much injury to continue
+You continue through the door without incident
+The hallway is super dark. There could be strange secrets lurking in the dark.
+You have a flashlight that could help. Do you use want to use it?
+You continue down the hall without your flashlight
+You turn on the flashlight iluminiating the large hall. You continue through the hall narrowly avoiding the falling air duct. Its a good thing you used the flashlight. Unfortunatly, you don't have a lot of battery left. You still decide to continue.
+You continue on through the hallway. A large air duct falls down crushing you.
+1 - check on your crew
+2 - make sure there isn’t damage that could pose an immediate threat
