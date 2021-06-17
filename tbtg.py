@@ -4,8 +4,8 @@ from PIL import Image
 # ascii characters used to build the output text
 ASCII_CHARS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
 
+# resize image1 according to a new width
 def resize_image1(image1, new_width=100):
-    """Resizes the input image according to the new width"""
     width, height = image1.size
     ratio = height/width
     night = int(new_width * ratio)
@@ -13,20 +13,18 @@ def resize_image1(image1, new_width=100):
     resized_image1 = image1.resize((new_width, new_height))
     return(resized_image1)
 
+# convert each pixel to grayscale
 def grayify(image1):
-    """converts each pixel to grayscale"""
     grayscale_image1 = image1.convert("L")
     return(grayscale_image1)
 
+# convert pixels to a string of ascii characters
 def pixels_to_ascii(image1):
-    """converts pixels to ascii characters in the list"""
     pixels = image1.getdata()
     characters = "".join([ASCII_CHARS[pixel//25] for pixel in pixels])
     return(characters)
 
 def ascii_convert(new_width=100):
-    """opens the image file called space.jpg compiles all function and prints the image.jpg
-    saves the image file to the same folder as the program"""
     try:
         image1 = Image.open('space.jpg')
         print(image1)
@@ -56,9 +54,7 @@ purchased = []
 currency = 1000
 
 def game():
-        """Runs all the games code"""
     def function_one(list):
-            """Prints letter by letter using the write command."""
         for letter in list:
             sys.stdout.write(letter)
             sys.stdout.flush()
@@ -70,7 +66,6 @@ def game():
     ascii_convert()
 
     def playing():
-            """Ask the user if they want to play the game using input y/n."""
         if input("Do you wish to proceed? Y/n") != "n":
             function_one(str(list[1:2]))
         else:
@@ -79,7 +74,6 @@ def game():
     playing()
 
     def buy():
-            """Take the users input from 1 to 5 and checks they input against the varriable called currency to see if they have enough and adds their purchase to a list for later use."""
         function_one(str(list[3:4]))
         time.sleep(0.5)
         for i in range(5):
@@ -92,7 +86,6 @@ def game():
             purchase = input()
             if currency == 0:
                 break
-            #supplemental oxygen
             elif purchase == str(1):
                 if currency >= 500:
                     purchased.append(purchase)
@@ -101,7 +94,6 @@ def game():
                     currency = currency - x
                 else:
                     print("You don't have enough money")
-            #medical supplies
             elif purchase == str(2):
                 if currency >= 100:
                     purchased.append(purchase)
@@ -110,7 +102,6 @@ def game():
                     currency = currency - x
                 else:
                     print("You don't have enough money")
-            #rocket fuel
             elif purchase == str(3):
                 if currency >= 300:
                     purchased.append(purchase)
@@ -119,7 +110,6 @@ def game():
                     currency = currency - x
                 else:
                     print("You don't have enough money")
-            #protective gear
             elif purchase == str(4):
                 if currency >= 200:
                     purchased.append(purchase)
@@ -128,7 +118,6 @@ def game():
                     currency = currency - x
                 else:
                     print("You don't have enough money")
-            #flashlight
             elif purchase == str(5):
                 if currency >= 100:
                     purchased.append(purchase)
@@ -137,12 +126,11 @@ def game():
                     currency = currency - x
                 else:
                     print("You don't have enough money")
-            #invalid choice
+
             else:
                 function_one(str(list[9:10]))
 
         def b_first_encounter():
-                """Responible for checking the supplies the player purchased and confirms that by writing it in a list format."""
             function_one(str(list[10:11]))
             time.sleep(0.5)
             for i in range(1):
@@ -163,53 +151,137 @@ def game():
 
     buy()
 
+    def second_encouter():
+        for i in range(2):
+            function_one(str(list[i+30]))
 
-    def first_encounter():
-            """Players first choice. bad means that the player can no longer continue the game and good means they can go on maybe with a bonus"""
-        numberList = ["bad", "good"]
-        for i in range(5):
-            function_one(str(list[i+17]))
-
-        choice = input() #choice for the
-
-        dc = random.choices(numberList, weights=(10, 50), k=1)
-        #there is a 1:5 ratio that the play will be able to continue if they didn't buy medical supplies
-        print(dc)
-        #first choice: 1 - check on your crew
         if choice == str(1):
-            function_one(str(list[22:23]))
-            if str(2) in purchased:
-                #checks to see if the player has medical supplies in the list of purchased
-                function_one(str(list[25:26]))
-                choice_two = input("y/n")
-                if choice_two != "n":
+            option1()
+        elif choice == str(2):
+            option2()
+
+
+    def flashlight():
+        function_one(str(list[34:35]))
+        if str(5) in purchased:
+            function_one(str(list[35:36]))
+            flashlightchoice = input("y/n")
+            if flashlightchoice == "y":
+                function_one(str(list[37:38]))
+            else:
+                lifeordeath = ["death", "life"]
+                cause = random.choices(lifeordeath, weights=(10, 30), k=1)
+                if cause[0] == "death":
+                     function_one(str(list[38:39]))
+                else:
+                     function_one(str(list[36:37]))
+
+        else:
+            lifeordeath = ["death", "life"]
+            cause = random.choices(lifeordeath, weights=(10, 30), k=1)
+            if cause[0] == "death":
+                 function_one(str(list[38:39]))
+            else:
+                 function_one(str(list[36:37]))
+
+    def option1():
+        function_one(str(list[20:21]))
+        lifeordeath = ["death", "life"]
+        cause = random.choices(lifeordeath, weights=(10, 30), k=1)
+        print(purchased)
+        if str(2) in purchased:
+            med = input("use or not use y/n")
+
+            if med == "y":
+                function_one(str(list[24:25]))
+                purchased.remove(2)
+            else:
+                if cause[0] == "death":
                     function_one(str(list[26:27]))
                 else:
-                    if dc == "good":
-                        function_one(str(list[27:28]))
-                    elif dc == "bad":
-                        function_one(str(list[28:29]))
-                        sys.exit()
+                    function_one(str(list[25:26]))
 
-                if dc == "good":
-                    function_one(str(list[27:28]))
-                elif dc == "bad":
-                    function_one(str(list[28:29]))
-                    sys.exit()
-        #second choice: 2 - check comms to see if you can call for help
-        elif choice == str(2):
-            function_one(str(list[23:24]))
-            if input("y/n") != "n":
-                print(str(list[2:3]))
-                sys.exit()
+        else:
+            if cause[0] == "life":
+                function_one(str(list[25:26]))
             else:
-                continue
+                function_one(str(list[26:27]))
 
-        #third choice: 3 - make sure there isn’t damage that could pose an immediate threat using a flashlight
+    def option1b():
+        function_one(str(list[20:21]))
+        lifeordeath = ["death", "life"]
+        cause = random.choices(lifeordeath, weights=(10, 10), k=1)
+        print(purchased)
+        if str(2) in purchased:
+            med = input("use meds y/n")
+
+            if med == "y":
+                if cause[0] == "life":
+                    function_one(str(list[25:26]))
+                else:
+                    function_one(str(list[26:27]))
+                    purchased.remove(str(2))
+            else:
+                if cause[0] == "death":
+                    function_one(str(list[26:27]))
+                else:
+                    function_one(str(list[25:26]))
+
+        else:
+            if cause[0] == "life":
+                function_one(str(list[25:26]))
+            else:
+                function_one(str(list[26:27]))
+
+    def option2():
+        function_one(str(list[21:22]))
+        continuemission = input("y/n")
+        if continuemission != "y":
+            sys.exit()
+        else:
+            function_one(str(list[27:28]))
+            for i in range(2):
+                function_one(str(list[i+39]))
+
+            choice = input()
+
+            if choice == str(1):
+                option1b()
+            elif choice == str(2):
+                option3()
+
+    def option3():
+        function_one(str(list[22:23]))
+        door = input("y/n")
+        if door != "n":
+            lifeordeath = ["death", "life"]
+            cause = random.choices(lifeordeath, weights=(10, 60), k=1)
+            if cause[0] == "death":
+                function_one(str(list[32:33]))
+            else:
+                function_one(str(list[33:34]))
+                flashlight()
+                purchased.remove(str(5))
+
+
+
+        else:
+            function_one(str(list[29:30]))
+            second_encouter()
+
+    def first_encounter():
+        for i in range(3):
+            function_one(str(list[i+17]))
+
+        choice = input()
+
+        if choice == str(1):
+            option1()
+        elif choice == str(2):
+            option2()
         elif choice == str(3):
-            function_one(str(list[24:25]))
-            if str(5) in purchased:
-                #checks to see if the player has a flashlight in the list of purchased
+            option3()
+
 
 
     first_encounter()
